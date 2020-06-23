@@ -2,7 +2,6 @@ package it.uniroma2.isw2.milestone3;
 
 import java.io.File;
 import java.io.FileWriter;
-
 import weka.attributeSelection.BestFirst;
 import weka.attributeSelection.CfsSubsetEval;
 import weka.classifiers.Evaluation;
@@ -20,7 +19,6 @@ import weka.classifiers.meta.FilteredClassifier;
 import weka.filters.unsupervised.attribute.StringToNominal;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import java.lang.Math;
 
 public class Main {
 	private static final Logger logger = LogManager.getLogger(Main.class);
