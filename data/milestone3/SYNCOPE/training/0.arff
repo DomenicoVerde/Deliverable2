@@ -1,0 +1,22 @@
+% 1. Title: Syncope
+% 
+% 2. Sources:
+%      (a) Domenico Verde
+% 
+@RELATION syncope
+
+@ATTRIBUTE version  string
+@ATTRIBUTE filename   string
+@ATTRIBUTE loc numeric
+@ATTRIBUTE age numeric
+@ATTRIBUTE num-revisions numeric
+@ATTRIBUTE changeset numeric
+@ATTRIBUTE avg-changeset numeric
+@ATTRIBUTE max-changeset numeric
+@ATTRIBUTE num-authors numeric
+@ATTRIBUTE loc-added numeric
+@ATTRIBUTE avg-loc-added numeric
+@ATTRIBUTE buggyness {yes, no}
+
+
+@DATA
