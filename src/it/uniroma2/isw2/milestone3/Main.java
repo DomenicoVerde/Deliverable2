@@ -46,16 +46,16 @@ public class Main {
 				Instances test = source2.getDataSet();
 				
 				//Converting String attributes
-		        StringToNominal stringtoNominal = new StringToNominal();
-		        String[] options = new String[2];
-		        options[0] = "-R";
+		        	StringToNominal stringtoNominal = new StringToNominal();
+		        	String[] options = new String[2];
+		        	options[0] = "-R";
 				options[1] = "1-2";
 				stringtoNominal.setOptions(options);
-		        stringtoNominal.setInputFormat(test);
-		        Instances training = Filter.useFilter(train, stringtoNominal); 
-		        Instances testing = Filter.useFilter(test, stringtoNominal);
+		        	stringtoNominal.setInputFormat(test);
+		        	Instances training = Filter.useFilter(train, stringtoNominal); 
+		        	Instances testing = Filter.useFilter(test, stringtoNominal);
 				
-		        int numAttr = training.numAttributes();
+		        	int numAttr = training.numAttributes();
 				training.setClassIndex(numAttr-1);
 				testing.setClassIndex(numAttr-1);
 				
@@ -85,7 +85,7 @@ public class Main {
 				    pctDefectiveTest + ",RandomForest,No FS,No Sampling," + 
 					eval2.numTruePositives(0) + "," + eval2.numFalsePositives(0) + "," + eval2.numTrueNegatives(0) 
 					+ "," + eval2.numFalseNegatives(0) + "," + eval2.areaUnderROC(0) 
-				    + "," + eval2.kappa() + "," + eval2.precision(0) + "," 
+				    	+ "," + eval2.kappa() + "," + eval2.precision(0) + "," 
 					+ eval2.recall(0) + "\n");
 
 				//3. IBK
@@ -97,8 +97,8 @@ public class Main {
 					pctDefectiveTest + ",IBK,No FS,No Sampling," + 
 					eval3.numTruePositives(0) + "," + eval3.numFalsePositives(0) + "," + eval3.numTrueNegatives(0) 
 					+ "," + eval3.numFalseNegatives(0) + "," + eval3.areaUnderROC(0) 
-			        + "," + eval3.kappa() + "," + eval3.precision(0) + "," 
-				    + eval3.recall(0) + "\n");
+			        	+ "," + eval3.kappa() + "," + eval3.precision(0) + "," 
+				   	+ eval3.recall(0) + "\n");
 				
 				//UnderSampling
 				FilteredClassifier fc1 = new FilteredClassifier();
@@ -196,8 +196,8 @@ public class Main {
 					evalOversampled3.numTruePositives(0) + "," + evalOversampled3.numFalsePositives(0) + ","
 					+ evalOversampled3.numTrueNegatives(0) + "," + evalOversampled3.numFalseNegatives(0) + ","
 					+ evalOversampled3.areaUnderROC(0) 
-			        + "," + evalOversampled3.kappa() + "," + evalOversampled3.precision(0) + "," 
-			        + evalOversampled3.recall(0) + "\n");
+			       		+ "," + evalOversampled3.kappa() + "," + evalOversampled3.precision(0) + "," 
+			        	+ evalOversampled3.recall(0) + "\n");
 				
 				//SMOTE
 				SMOTE smote = new SMOTE();
@@ -265,8 +265,8 @@ public class Main {
 				
 				//NaiveBayes
 				classifier.buildClassifier(filteredTraining);
-			    eval.evaluateModel(classifier, filteredTesting);
-			    file.append(dataset + "," + i + "," + pctTraining + "," + pctDefectiveTrain + "," + 
+			    	eval.evaluateModel(classifier, filteredTesting);
+			    	file.append(dataset + "," + i + "," + pctTraining + "," + pctDefectiveTrain + "," + 
 					pctDefectiveTest + ",NaiveBayes,BF,No Sampling," + 
 					eval.numTruePositives(0) + "," + eval.numFalsePositives(0) + ","
 					+ eval.numTrueNegatives(0) + "," + eval.numFalseNegatives(0) + "," 
@@ -275,8 +275,8 @@ public class Main {
 					+ eval.recall(0) + "\n");
 				//RandomForest
 				classifier2.buildClassifier(filteredTraining);
-			    eval2.evaluateModel(classifier, filteredTesting);
-			    file.append(dataset + "," + i + "," + pctTraining + "," + pctDefectiveTrain + "," + 
+			   	eval2.evaluateModel(classifier, filteredTesting);
+			    	file.append(dataset + "," + i + "," + pctTraining + "," + pctDefectiveTrain + "," + 
 					pctDefectiveTest + ",RandomForest,BF,No Sampling," + 
 					eval2.numTruePositives(0) + "," + eval2.numFalsePositives(0) + ","
 					+ eval2.numTrueNegatives(0) + "," + eval2.numFalseNegatives(0) + "," 
@@ -285,8 +285,8 @@ public class Main {
 					+ eval2.recall(0) + "\n");
 				//IBK
 				classifier3.buildClassifier(filteredTraining);
-			    eval3.evaluateModel(classifier, filteredTesting);
-			    file.append(dataset + "," + i + "," + pctTraining + "," + pctDefectiveTrain + "," + 
+			    	eval3.evaluateModel(classifier, filteredTesting);
+			    	file.append(dataset + "," + i + "," + pctTraining + "," + pctDefectiveTrain + "," + 
 					pctDefectiveTest + ",IBK,BF,No Sampling," + 
 					eval3.numTruePositives(0) + "," + eval3.numFalsePositives(0) + ","
 					+ eval3.numTrueNegatives(0) + "," + eval3.numFalseNegatives(0) + "," 
@@ -446,5 +446,4 @@ public class Main {
 			logger.info("Done! Your file is ready!");
 		}
 	}
-
 }
